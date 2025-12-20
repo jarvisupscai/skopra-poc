@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const Home: FC = () => {
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate('/dashboard');
+  const handleNavigate = (path: string) => () => {
+    navigate(path);
   };
 
   return (
@@ -19,8 +19,11 @@ const Home: FC = () => {
             friction.
           </p>
           <div className="hero__actions">
-            <button type="button" className="primary-button" onClick={handleNavigate}>
+            <button type="button" className="primary-button" onClick={handleNavigate('/dashboard')}>
               Go to Dashboard
+            </button>
+            <button type="button" className="secondary-button" onClick={handleNavigate('/fit-validator/start')}>
+              Start Fit Validator
             </button>
           </div>
         </section>

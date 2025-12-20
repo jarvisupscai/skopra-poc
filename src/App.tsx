@@ -3,6 +3,8 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Contact from './pages/Contact';
+import FitValidatorStart from './pages/FitValidatorStart';
+import FitValidatorFlow from './pages/FitValidatorFlow';
 import './App.css';
 
 const NotFound: FC = () => (
@@ -60,6 +62,9 @@ const App: FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/fit-validator" element={<FitValidatorStart />} />
+          <Route path="/fit-validator/start" element={<FitValidatorStart />} />
+          <Route path="/fit-validator/validation" element={<FitValidatorFlow />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
